@@ -1,0 +1,12 @@
+services:
+  node:
+    build:
+      context: .
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - node
+    ports:
+      - ${WEB_PORT:-3001}:80

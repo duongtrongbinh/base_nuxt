@@ -1,0 +1,16 @@
+:deep(.required .el-form-item__label:after) {
+  content: " *";
+  color: #dc3545;
+}
+
+.error-text {
+  color: #f56c6c;
+}
+
+body.el-loading-parent--hidden {
+  overflow: auto !important;
+}
+
+.cursor {
+  cursor: pointer;
+}
