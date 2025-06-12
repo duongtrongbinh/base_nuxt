@@ -4,7 +4,7 @@ import { defineNuxtConfig  } from "nuxt/config"
 export default defineNuxtConfig({
   css: ["@/assets/scss/main.scss"],
   compatibilityDate: '2025-05-15',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   typescript: {
     strict: true,
     typeCheck: true,
