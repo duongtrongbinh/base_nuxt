@@ -1,0 +1,16 @@
+@use '@/assets/scss/main.scss' as *;
+
+.button-search {
+  width: 2.5rem;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-gray-light;
+    height: 50%;
+    border-radius: .25rem;
+  }
+}

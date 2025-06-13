@@ -1,10 +1,21 @@
 <template>
   <div class="header">
     <AtomsLogo :logo="Logo" />
+    <MoleculesMenu />
+    <div class="header__redirect">
+      <AtomsButtonSearch @click="isActive" />
+      <AtomsButtonDefault :title="`Đăng ký`" :url="`/`" />
+      <AtomsButtonDefault :title="`Đăng nhập`" :url="`/`" />
+    </div>
   </div>
+  <MoleculesPopupSearch v-model="disablePopup" />
 </template>
 <script lang="ts" setup>
-const Logo = ref('https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png')
+import Logo from '@/assets/images/gai-xinh-tu-suong-28.webp'
+const disablePopup = ref(false)
+const isActive = () => {
+  disablePopup.value = !disablePopup.value
+}
 </script>
 <style lang="scss" scoped>
 @use 'index.scss';

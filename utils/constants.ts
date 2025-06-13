@@ -1,1 +1,2 @@
-// Hằng số và enum
+export const PAGINATION_LIST_BLOG = 12
+export const PAGINATION_LIST_BLOG_DEFAULT = 9
