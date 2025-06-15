@@ -8,5 +8,4 @@ export interface RuleFormRegister {
   email: string,
   password: string,
   password_confirmation: string,
-  check: boolean,
 }

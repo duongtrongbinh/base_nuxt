@@ -1,7 +1,6 @@
 <template>
   <el-dialog
     v-model="isShow"
-    class="popup-login"
     width="510px"
     :show-close="false"
     @close="uiStore.setUiState('isLoginDialog' ,!uiStore.getUiState('isLoginDialog'))"
@@ -54,7 +53,7 @@
               </template>
               <template #suffix>
                 <el-icon @click="togglePassword" style="cursor: pointer;">
-                  <img v-if="showPassword" src="@/assets/icons/eye-blue.svg" alt="blind-eye.svg">
+                  <img v-if="showPassword" src="@/assets/icons/blind-eye.svg" alt="blind-eye.svg">
                   <img v-else src="@/assets/icons/eye.svg" alt="eye.svg">
                 </el-icon>
               </template>
