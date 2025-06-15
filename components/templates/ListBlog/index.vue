@@ -1,26 +1,28 @@
 <template>
   <div class="blog__header">
-    <img src="@/assets/images/blogs/header.png" alt="header">
     <div class="blog__header--title">
-      <div class="blog__header-title--main">
-        <h1>Blog nghề nghiệp</h1>
+      <div class="blog__header-title--main container">
+        <h1>Blog công nghệ</h1>
         <p>
-          Khám phá thông tin hữu ích liên quan tới nghề nghiệp bạn quan tâm. Chia sẻ kinh nghiệm, kiến
-          thức chuyên môn giúp bạn tìm được công việc phù hợp và phát triển bản thân.
+          Blog chuyên chia sẻ các kiến thức về công nghệ, lập trình website, sắp tới có thể có thêm mobile. Chủ yếu làm về các tin tức mới liên quan đến php, laravel, js, vue, nuxt, và các phần liên quan đến máy chủ....
         </p>
       </div>
     </div>
   </div>
   <section class="feature-list-blog">
-
-    <el-col class="wrapper-feature-list-blog container-blog">
-      <Carousel v-model="data.progress">
-        <Slide v-for="(slide, index) in data.blogs" :key="index">
-          <MoleculesItemBlog :blogs="slide" />
-        </Slide>
-      </Carousel>
-      <AtomsPaginationBlog v-model="pagination" @change="onPageChange" />
-    </el-col>
+    <el-row :gutter="24" class="container">
+      <el-col class="wrapper-feature-list-blog container" :md=18 :sm=18 :xs=18>
+        <Carousel v-model="data.progress">
+          <Slide v-for="(slide, index) in data.blogs" :key="index">
+            <MoleculesItemBlog :blogs="slide" />
+          </Slide>
+        </Carousel>
+        <AtomsPaginationBlog v-model="pagination" @change="onPageChange" />
+      </el-col>
+      <el-col :md=6 :sm=6 :xs=6>
+        <AtomsBannerBlog />
+      </el-col>
+    </el-row>
   </section>
 </template>
 

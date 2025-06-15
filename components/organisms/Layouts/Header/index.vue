@@ -3,19 +3,17 @@
     <AtomsLogo :logo="Logo" />
     <MoleculesMenu />
     <div class="header__redirect">
-      <AtomsButtonSearch @click="isActive" />
-      <AtomsButtonDefault :title="`Đăng ký`" :url="`/`" />
-      <AtomsButtonDefault :title="`Đăng nhập`" :url="`/`" />
+      <AtomsButtonSearch @click="uiStore.toggleUiState('isSearch')" />
+      <AtomsButtonDefault :title="`Đăng ký`" @click="uiStore.toggleUiState('isRegisterDialog')" />
+      <AtomsButtonDefault :title="`Đăng nhập`" @click="uiStore.toggleUiState('isLoginDialog')" />
     </div>
   </div>
-  <MoleculesPopupSearch v-model="disablePopup" />
 </template>
 <script lang="ts" setup>
-import Logo from '@/assets/images/gai-xinh-tu-suong-28.webp'
-const disablePopup = ref(false)
-const isActive = () => {
-  disablePopup.value = !disablePopup.value
-}
+import Logo from '@/assets/images/logo.png'
+import { useUiStore } from '@/stores'
+
+const uiStore = useUiStore()
 </script>
 <style lang="scss" scoped>
 @use 'index.scss';

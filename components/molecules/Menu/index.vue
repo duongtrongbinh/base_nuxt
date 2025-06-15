@@ -1,19 +1,40 @@
 <template>
   <div class="menu">
     <el-menu
-      :default-active="activeIndex2"
+      :default-active="activePath"
       mode="horizontal"
     >
-      <el-menu-item to="/" index="1">Trang chủ</el-menu-item>
-      <el-menu-item index="2">Danh mục</el-menu-item>
-      <el-menu-item index="3">Trang tin tức</el-menu-item>
-      <el-menu-item index="4">Liên hệ</el-menu-item>
+      <el-menu-item
+        v-for="item in menuItems"
+        :key="item.path"
+        :to="item.path"
+        :index="item.path"
+      >
+        {{ item.name }}
+      </el-menu-item>
     </el-menu>
   </div>
 </template>
+
 <script lang="ts" setup>
-const activeIndex2 = ref('1')
+import { useRoute } from 'vue-router'
+import { menuItems } from "@/utils/menu"
+
+const route = useRoute();
+
+const routeToIndexMap: { [key: string]: string } = {
+  '': '/',
+  'category': '/category',
+  'contact': '/contact',
+  'blogs-slug': '/blogs/:slug',
+};
+
+const activePath = computed(() => {
+  const routeName = route.name ? String(route.name) : ''
+  return routeToIndexMap[routeName] || '/'
+});
 </script>
+
 <style lang="scss" scoped>
 @use 'index.scss';
 </style>

@@ -10,8 +10,16 @@
       <OrganismsLayoutsFooter />
     </el-footer>
     <AtomsBackToTop />
+    <MoleculesPopupSearch v-model="uiStore.uiState.isSearch" />
+    <MoleculesPopupLogin v-model="uiStore.uiState.isLoginDialog" />
+    <MoleculesPopupRegister v-model="uiStore.uiState.isRegisterDialog" />
   </el-container>
 </template>
+<script lang="ts" setup>
+import { useUiStore } from '@/stores'
+
+const uiStore = useUiStore()
+</script>
 <style lang="scss" scoped>
 @use '@/assets/scss/main.scss' as *;
 

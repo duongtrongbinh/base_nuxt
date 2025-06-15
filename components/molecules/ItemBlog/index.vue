@@ -1,20 +1,32 @@
 <template>
-  <el-row v-if="props.blogs" :gutter="16">
-    <el-col v-for="(item, index) in props.blogs" :key="index" :xl=6 :lg=6 :md=8 :sm=12 :xs=12 class="col-xxs-6">
+  <el-row v-if="props.blogs" :gutter="24">
+    <el-col v-for="(item, index) in props.blogs" :key="index" :xl=8 :lg=8 :md=8 :sm=12 :xs=12 class="col-xxs-6">
       <section class="box-job">
         <nuxt-link :to="'/blogs/' + item.slug">
           <div class="box-job-item">
             <div class="box-body">
               <div class="box-body__logo">
-                <img
-                  :src="item.thumbnail"
-                  alt="icon logo FM Supply"
-                >
+                <el-image :src="item.thumbnail" fit="cover" :lazy="true" >
+                  <template #error>
+                    <div class="loading-failed">
+                      <Icon name="flat-color-icons:cancel" />
+                      <span>Image load failed</span>
+                    </div>
+                  </template>
+                </el-image>
               </div>
-              <div class="box-body__company">
-                <h3>{{ item.author }}</h3>
-                <NuxtLink>{{ item.title }}</NuxtLink>
-                <span>ITMATE: {{ formatDate( item.created_at) }}</span>
+              <div class="box-body__company title-blog">
+                <div class="title-blog__info">
+                  <h3>{{ item.author }}</h3>
+                  <span>{{ formatDate( item.created_at) }}</span>
+                </div>
+                <el-tooltip
+                  effect="dark"
+                  :content="item.title"
+                  placement="top"
+                >
+                  <nuxt-link>{{ item.title }}</nuxt-link>
+                </el-tooltip>
                 <p v-html="item.content" />
               </div>
             </div>
@@ -27,6 +39,7 @@
 <script setup lang="ts">
 import type { Blog } from '@/types'
 import { formatDate } from '@/utils/formatters'
+import type { PropType } from 'vue'
 
 const props = defineProps({
   blogs: {

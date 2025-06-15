@@ -1,10 +1,14 @@
 <template>
   <el-dialog
     v-model="isShow"
-    class="popup-search"
+    class="popup-register"
     :show-close="false"
-    @close="uiStore.setUiState('isSearch' ,!uiStore.getUiState('isSearch'))"
+    @close="uiStore.setUiState('isRegisterDialog' ,!uiStore.getUiState('isRegisterDialog'))"
   >
+    <template #header>
+      <h3>Register</h3>
+    </template>
+    <div class="content"></div>
   </el-dialog>
 </template>
 <script lang="ts" setup>
