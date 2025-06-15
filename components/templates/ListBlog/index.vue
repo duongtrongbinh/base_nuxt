@@ -4,7 +4,8 @@
       <div class="blog__header-title--main container">
         <h1>Blog công nghệ</h1>
         <p>
-          Blog chuyên chia sẻ các kiến thức về công nghệ, lập trình website, sắp tới có thể có thêm mobile. Chủ yếu làm về các tin tức mới liên quan đến php, laravel, js, vue, nuxt, và các phần liên quan đến máy chủ....
+          Blog chuyên chia sẻ các kiến thức về công nghệ, lập trình website, sắp tới có thể có thêm mobile. 
+          Chủ yếu làm về các tin tức mới liên quan đến php, laravel, js, vue, nuxt, và các phần liên quan đến máy chủ....
         </p>
       </div>
     </div>

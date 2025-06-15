@@ -29,3 +29,15 @@
     }
   }
 }
+
+.flex-column {
+  width: 100%;
+
+  :deep(.el-menu .el-menu-item), :deep(.el-menu .el-menu-item.is-active) {
+    height: 2rem !important;
+
+    &:hover {
+      color: $color-sky-blue-accent !important;
+    }
+  }
+}

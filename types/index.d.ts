@@ -1,6 +1,7 @@
 // models
 export * from './models/user';
 export * from './models/blog';
+export * from './models/auth';
 
 // utils
 export * from './utils/pagination';

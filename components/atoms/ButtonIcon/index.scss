@@ -1,8 +1,9 @@
 @use '@/assets/scss/main.scss' as *;
 
-.button-search {
+.button-icon {
   width: 2.5rem;
   height: 50%;
+  background-color: $color-white;
   display: flex;
   align-items: center;
   justify-content: center;

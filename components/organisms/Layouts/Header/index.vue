@@ -3,7 +3,7 @@
     <AtomsLogo :logo="Logo" />
     <MoleculesMenu />
     <div class="header__redirect">
-      <AtomsButtonSearch @click="uiStore.toggleUiState('isSearch')" />
+      <AtomsButtonIcon :name="`oui:search`" @click="uiStore.toggleUiState('isSearch')" />
       <AtomsButtonDefault :title="`Đăng ký`" @click="uiStore.toggleUiState('isRegisterDialog')" />
       <AtomsButtonDefault :title="`Đăng nhập`" @click="uiStore.toggleUiState('isLoginDialog')" />
     </div>

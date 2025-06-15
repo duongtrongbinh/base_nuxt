@@ -1,8 +1,11 @@
 <template>
-  <div class="menu">
+  <div
+    class="menu" 
+    :class="props.flexColumn ? `flex-column` : ``"
+  >
     <el-menu
       :default-active="activePath"
-      mode="horizontal"
+      :mode="props.flexColumn ? `vertical` : `horizontal`"
     >
       <el-menu-item
         v-for="item in menuItems"
@@ -20,8 +23,15 @@
 import { useRoute } from 'vue-router'
 import { menuItems } from "@/utils/menu"
 
-const route = useRoute();
+const props = defineProps({
+  flexColumn: {
+    type: Boolean,
+    default: false,
+    required: false
+  }
+})
 
+const route = useRoute()
 const routeToIndexMap: { [key: string]: string } = {
   '': '/',
   'category': '/category',
