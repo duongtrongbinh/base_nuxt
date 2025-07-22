@@ -9,3 +9,8 @@ export interface User {
   join_date: string | Date | null,
   position_user: CustomOption | null,
 }
+
+export interface UserAuthorizationData {
+  user: User;
+  authorization: Authorization;
+}

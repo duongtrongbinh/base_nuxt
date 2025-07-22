@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">
+  <div class="logo" @click="handleClick()">
     <el-image :src="props.logo" fit="contain">
       <template #error>
         <div class="avatar">
@@ -13,7 +13,12 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
+const handleClick = () => {
+  router.push('/')
+}
 const props = defineProps({
   logo: {
     type: String,

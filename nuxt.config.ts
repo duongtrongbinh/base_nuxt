@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   },
   plugins: [
     "@/plugins/axios.ts",
+    "@/plugins/pinia.ts",
   ],
   imports: {
     dirs: [

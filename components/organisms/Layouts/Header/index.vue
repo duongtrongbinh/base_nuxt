@@ -1,10 +1,19 @@
 <template>
   <div class="header">
     <AtomsLogo :logo="Logo" />
+    <MoleculesMenu />
+    <div class="header__redirect">
+      <AtomsButtonIcon :name="`oui:search`" @click="uiStore.toggleUiState('isSearch')" />
+      <AtomsButtonDefault :title="`Đăng ký`" @click="uiStore.toggleUiState('isRegisterDialog')" />
+      <AtomsButtonDefault :title="`Đăng nhập`" @click="uiStore.toggleUiState('isLoginDialog')" />
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
-const Logo = ref('https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png')
+import Logo from '@/assets/images/logo.png'
+import { useUiStore } from '@/stores'
+
+const uiStore = useUiStore()
 </script>
 <style lang="scss" scoped>
 @use 'index.scss';

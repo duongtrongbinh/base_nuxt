@@ -16,34 +16,20 @@
 }
 
 .container {
-  width: 1064px;
-  margin: 0 auto;
+  max-width: 1440px !important;
+  margin: 0 auto !important;
 }
 
-.container-company {
-  width: 920px;
-  margin: 0 auto;
-}
-
-.container-auth-company {
-  width: 700px;
-  margin: 0 auto;
-}
 
 @media (max-width: 1200px) {
   .container {
     width: 900px;
     margin: 0 auto;
   }
-
-  .container-auth-company {
-    width: 500px;
-  }
-
 }
 
 @media (max-width: 768px) {
-  .container, .container-auth-company {
+  .container {
     width: 100%;
     padding: 0 10px;
   }
